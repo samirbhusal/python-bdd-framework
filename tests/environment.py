@@ -7,7 +7,7 @@ def before_all(context):
     context.platform = WebPlatform()
 
     # Get list of browsers from behave.ini or fallback
-    browser_list = "chrome,firefox,safari"
+    browser_list = "chrome,firefox"
     if hasattr(context.config, "userdata"):
         browser_list = context.config.userdata.get("browsers", browser_list)
 

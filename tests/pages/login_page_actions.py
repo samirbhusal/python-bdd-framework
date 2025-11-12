@@ -1,6 +1,4 @@
 from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from tests.pages.locators.login_page_locators import LoginPageLocators
 
 class LoginPage:
     def __init__(self, driver):
