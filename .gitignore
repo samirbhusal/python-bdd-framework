@@ -1,0 +1,35 @@
+# Virtual environment folders
+__pycache__/
+.venv/
+env/
+venv/
+
+# IDE / Editor specific
+.idea/
+*.iml
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Browser Drivers & Cache
+chromedriver
+geckodriver
+*.log
+
+# Test artifacts
+reports/
+logs/
+screenshots/
+allure-results/
+allure-report/
+test-output/
+*.xml
+
+# Miscellaneous
+.env
+*.zip
+*.tar.gz
+*.egg-info/
+dist/
+build/
