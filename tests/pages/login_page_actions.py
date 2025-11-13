@@ -1,9 +1,18 @@
 from selenium.webdriver.support.ui import WebDriverWait
 
-class LoginPage:
-    def __init__(self, driver):
-        self.driver = driver
-        self.wait = WebDriverWait(driver, 10)
+from tests.pages.base_page import BasePage
+from tests.pages.locators.login_page_locators import LoginPageLocators
 
-    def load_login_page(self, url="https://opensource-demo.orangehrmlive.com/"):
-        self.driver.get(url)
+
+class LoginPage(BasePage):
+
+    def enter_username(self, username):
+        self.type(LoginPageLocators.USERNAME_INPUT, username)
+
+    def enter_password(self, password):
+        self.type(LoginPageLocators.PASSWORD_INPUT, password)
+        self.sleep(5)
+
+    def click_login(self):
+        self.click(LoginPageLocators.LOGIN_BUTTON)
+        self.sleep(10)

@@ -1,10 +1,15 @@
 from tests.core.web_platform import WebPlatform
 import random
 
+from tests.pages.common_page_actions import CommonPageActions
+from tests.pages.login_page_actions import LoginPage
+
 
 def before_all(context):
     """Setup before all tests"""
     context.platform = WebPlatform()
+
+    context.base_url = context.config.userdata.get("base_url")
 
     # Get list of browsers from behave.ini or fallback
     browser_list = "chrome,firefox"
@@ -20,6 +25,11 @@ def before_all(context):
     browser = cli_browser or selected_browser
 
     context.driver = context.platform.start_driver(browser)
+
+
+def before_scenario(context, scenario):
+    context.login = LoginPage(context.driver)
+    context.common = CommonPageActions(context.driver)
 
 
 def after_all(context):

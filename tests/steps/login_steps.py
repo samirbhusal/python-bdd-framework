@@ -1,8 +1,17 @@
-from behave import given
+from behave import *
 from tests.pages.login_page_actions import LoginPage
 
-@given("user navigates to Orange HRM Login page")
-def step_open_login_page(context):
-    LoginPage(context)
-    context.login_page = LoginPage(context.driver)
-    context.login_page.load_login_page()
+
+@when('user enters username as {username}')
+def enter_username(context, username):
+    context.login.enter_username(username)
+
+
+@when('user enters password as {password}')
+def enter_password(context, password):
+    context.login.enter_password(password)
+
+
+@then("user clicks the login button")
+def click_login_button(context):
+    context.login.click_login()
