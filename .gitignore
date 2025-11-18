@@ -25,6 +25,7 @@ allure-results/
 allure-report/
 test-output/
 *.xml
+allure_behave.formatter:AllureFormatter.output/
 
 # Miscellaneous
 .env

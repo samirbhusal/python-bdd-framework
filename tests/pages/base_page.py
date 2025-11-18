@@ -46,3 +46,7 @@ class BasePage:
     def sleep(self, seconds):
         import time
         time.sleep(seconds)
+
+    def get_text(self, locator):
+        elem = self.wait.until(EC.presence_of_element_located(locator))
+        return elem.text.strip()

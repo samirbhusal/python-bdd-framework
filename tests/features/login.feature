@@ -1,9 +1,11 @@
 @login @regression
 Feature: Orange HRM Login Functionality
-
-  @TES-0001
-  Scenario: Verify user can login with valid credentials
+  Background:
     Given user navigates to Orange HRM Login page
-    When user enters username as Admin
-    And user enters password as admin123
-    Then user clicks the login button
+
+  @TES-0001 @smoke
+  Scenario: Verify user can login with valid credentials
+    Given user enters username as Admin
+    When user enters password as admin123
+    And user clicks the login button
+    Then user is navigated to dashboard
