@@ -1,0 +1,21 @@
+userName: ${BROWSERSTACK_USERNAME}
+accessKey: ${BROWSERSTACK_ACCESS_KEY}
+
+framework: behave
+
+capabilities:
+  projectName: "Python BDD Framework"
+  buildName: "Behave Test Build"
+  sessionName: "Sample Test"
+
+  debug: true
+  networkLogs: true
+  consoleLogs: info
+
+platforms:
+  - os: Windows
+    osVersion: 11
+    browserName: Chrome
+    browserVersion: latest
+
+parallelsPerPlatform: 1
