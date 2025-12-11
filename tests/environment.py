@@ -88,11 +88,11 @@ def after_scenario(context, scenario):
         except Exception as e:
             print("BrowserStack status update failed:", e)
 
-        # Quit driver
-        try:
-            context.driver.quit()
-        except:
-            pass
+    # Quit driver
+    try:
+        context.platform.stop_driver()
+    except:
+        pass
 
 
 def after_all(context):

@@ -12,3 +12,7 @@ class LoginPage(BasePage):
 
     def click_login(self):
         self.click(LoginPageLocators.LOGIN_BUTTON)
+
+    def validate_login_screen(self):
+        actual_title = self.get_text(LoginPageLocators.LOGIN_BUTTON)
+        assert actual_title == "Login", f"Login title mismatch. Expected 'Dashboard', got '{actual_title}'"

@@ -13,3 +13,7 @@ def enter_password(context, password):
 @step("user clicks the login button")
 def click_login_button(context):
     context.login.click_login()
+
+@step("user validates login screen")
+def validate_login_screen(context):
+    context.login.validate_login_screen()

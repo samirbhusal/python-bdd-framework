@@ -5,3 +5,4 @@ class LoginPageLocators:
     USERNAME_INPUT = (By.NAME, "username")
     PASSWORD_INPUT = (By.NAME, "password")
     LOGIN_BUTTON = (By.CLASS_NAME, "orangehrm-login-button")
+    Login_page_title = (By.CLASS_NAME, "orangehrm-login-title")
