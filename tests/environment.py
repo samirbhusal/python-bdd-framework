@@ -76,9 +76,6 @@ def after_step(context, step):
 def after_scenario(context, scenario):
     """Update BrowserStack session result"""
 
-    if context.execution != "browserstack":
-        return context.driver.quit() # Skip for local execution
-
     try:
         status = "passed" if scenario.status == "passed" else "failed"
         reason = "Scenario executed" if status == "passed" else f"Failed: {scenario.name}"
@@ -91,15 +88,13 @@ def after_scenario(context, scenario):
     except Exception as e:
         print("BrowserStack status update failed:", e)
 
-    try:
-        context.driver.quit()
-    except:
-        pass
+        try:
+            context.driver.quit()
+        except:
+            pass
 
 
 def after_all(context):
-    """Cleanup after all tests"""
-    context.platform.stop_driver()
 
     # Generate allure HTML automatically
     try:

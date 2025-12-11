@@ -9,3 +9,10 @@ Feature: Orange HRM Login Functionality
     When user enters password as admin123
     And user clicks the login button
     Then user is navigated to dashboard
+
+  @TES-0002 @smoke
+  Scenario: Verify user can log out
+    Given user enters username as Admin
+    When user enters password as admin123
+    And user clicks the login button
+    When user is navigated to dashboard
